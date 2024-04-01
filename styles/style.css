@@ -1,5 +1,71 @@
+
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+
+:root {
+  --page-font: 'IBM Plex mono', sans-serif;
+  --main-size: 18px;
+  --accent-size: 157px;
+  --accent-weight: 700;
+  --bg-color: #000028;
+}
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  /* background-image: url(../images/cover-image-dark.png);
+  background-attachment: fixed; */
+  font-family: var(--page-font);
+  background-color: var(--bg-color);
+  font-size: var(--main-size);
+  width: 1024px;
 }
+
+/* Хедер */
+.header {
+  display: grid;
+
+}
+
+/* Меин */
+.main {
+  /* background-color: var(--bg-color); */
+  margin-top: 60px;
+  
+}
+
+.title {
+  font-size: var(--main-size);
+  font-weight: var(--accent-weight);
+}
+
+.main__why {
+  display: grid;
+  grid-template-areas: 
+    "t a a"
+    "t b b";
+  gap: 20px
+}
+
+.main__title {
+  color: #FF0070;
+}
+
+.card-title {
+  color: #000028;
+  width: 100%;
+  background-color: #FF0070;
+}
+
+.main__why-title {
+  grid-area: t;
+}
+
+.why__item1 {
+  grid-area: a;
+}
+
+.why__item2 {
+  grid-area: b;
+}
+
+
+
