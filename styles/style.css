@@ -4,9 +4,11 @@
 :root {
   --page-font: 'IBM Plex mono', sans-serif;
   --main-size: 18px;
+  --main-weight: 400;
   --accent-size: 157px;
   --accent-weight: 700;
   --bg-color: #000028;
+  --text-color: #F1B2CE;
 }
 
 .page {
@@ -16,7 +18,9 @@
   font-family: var(--page-font);
   background-color: var(--bg-color);
   font-size: var(--main-size);
-  width: 1024px;
+  max-width: 1024px;
+  margin-bottom: 60px;
+  
 }
 
 /* Хедер */
@@ -27,6 +31,9 @@
 
 /* Меин */
 .main {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
   /* background-color: var(--bg-color); */
   margin-top: 60px;
   
@@ -35,10 +42,23 @@
 .title {
   font-size: var(--main-size);
   font-weight: var(--accent-weight);
+  line-height: 23.4px;
+}
+
+.card {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.card-text {
+  color: var(--text-color);
+  font-weight: var(--main-weight);
 }
 
 .main__why {
   display: grid;
+  grid-template-columns: 1fr 2fr;
   grid-template-areas: 
     "t a a"
     "t b b";
@@ -67,5 +87,81 @@
   grid-area: b;
 }
 
+/* Секция WHY */
 
+.main__what {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+    "t t t"
+    "a b c";
+  gap: 20px
+}
 
+.main__what-title {
+  grid-area: t;
+}
+
+.what__item1 {
+  grid-area: a;
+}
+
+.what__item2 {
+  grid-area: b;
+}
+
+.what__item3 {
+  grid-area: c;
+}
+
+/* Сектор HOW */
+
+.main__how {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: 
+    "t a"
+    "t b"
+    "t c"
+    "t d"
+    "t e"
+    "t f"
+    ;
+  gap: 20px
+}
+
+.main__how-title {
+  grid-area: t;
+}
+
+.how__item1 {
+  grid-area: a;
+}
+
+.how__item2 {
+  grid-area: b;
+}
+
+.how__item3 {
+  grid-area: c;
+}
+
+.how__item4 {
+  grid-area: d;
+}
+
+.how__item5 {
+  grid-area: e;
+}
+
+.how__item6 {
+  grid-area: f;
+}
+
+.main__how-card .card-title:not(:last-child) {
+  /* color: aqua; */
+  font-weight: var(--main-weight);
+  font-size: var(--main-size);
+}
