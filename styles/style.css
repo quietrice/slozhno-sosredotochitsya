@@ -8,8 +8,11 @@
   --accent-size: 157px;
   --accent-weight: 700;
   --bg-color: #000028;
+  /* --bg-image: url(../images/cover-image-dark.png) */
   --text-color: #F1B2CE;
   --accent-color: #DB00FF;
+  --theme-accent-color: #FF0070;
+  --border-theme-hover-color: rgb(255, 0, 112, 0.4)
 }
 
 .page {
@@ -21,7 +24,112 @@
   font-size: var(--main-size);
   max-width: 1024px;
   margin-bottom: 60px;
+  background-image: url(../images/cover-image-dark.png);
+  background-attachment: fixed;
   
+}
+
+/* ОООО курва */
+/* Основа сделано.
+Добавлена минимальная адаптация
+-Доделать Хедер (цвет, размеры, картинки, бекграунд, точка, скринридер, кнопки темы и прочее)
+-В what доделать титл
+-доделать футер (размеры)
+
+Что осталось:
+-Темная тема
+-Адаптивность
+-Картинка на весь сайт а не на хедер
+еще что-то и еще что-то */
+
+
+
+/* Хедер */
+.header {
+  position: relative;
+  display: grid;
+
+  --breakpoint: 768px;
+  --breakpoint-simulation: (100vw - var(--breakpoint));
+
+  /* --height-header: ; */
+
+  min-height: 768px;
+  max-width: 1024px;
+  height: calc(1792px - 100vw);
+  /* background-color: aqua; */
+  /* height:clamp(768px, var(--breakpoint-simulation) * 1000, 1024px); */
+
+  
+
+}
+
+@media (max-width: 768px) {
+  .header {
+    /* min-height: 668px;
+    min-width: 375px; */
+    
+    /* height: calc(100vw * 1.33); */
+    height: calc(100vw + 256px);
+  }
+
+}
+
+.decorated-zone::after {
+  position: absolute;
+  content: "REC";
+  color: var(--theme-accent-color);
+  right: 27px;
+  top: 27px;
+
+  
+
+}
+
+/* .decorated-zone::after {
+  position: absolute;
+  border-width: 25px 25px 0 0;
+  border-style: solid;
+  border-color: var(--theme-accent-color);
+  
+} */
+
+.decorated-zone::marker {
+  color: #2e9aff;
+}
+
+/* Кнопки */
+.header__theme-menu-list {
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+}
+
+
+
+.header__theme-menu-button {
+  
+  background-color: transparent;
+  border-width: 1px;
+  border-color: transparent;
+  /* border-color: var(--accent-color); */
+  border-style: solid;
+  color: var(--theme-accent-color);
+}
+
+.header__theme-menu-item {
+  
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--border-theme-hover-color);
+  border-width: 1px;
+  
+}
+
+.header__theme-menu-button:focus {
+  border-color: transparent transparent var(--theme-accent-color) transparent;
 }
 
 .header-title {
@@ -31,28 +139,31 @@
   
 }
 
-/* Хедер */
-.header {
-  --breakpoint: 768px;
-  --breakpoint-simulation: (100vw - var(--breakpoint));
-
-  /* --height-header: ; */
-
-  min-height: 768px;
-  max-width: 1024px;
-  height: calc(1792px - 100vw);
-  background-color: aqua;
-  /* height:clamp(768px, var(--breakpoint-simulation) * 1000, 1024px); */
-
-  display: grid;
-
+.header-text {
+  margin-inline-end: 20px;
+  width: calc(50% - 20px);
+  text-align: start;
+  justify-self: end;
+  background-color: var(--theme-accent-color);
+  height: min-content;
 }
 
-@media (min-width: 768px) {
-  .header {
-    min-height: 668px;
-    min-width: 375px;
-    height: 100%;
+@media (max-width:768px) {
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    
+  }
+
+  .header__theme-menu {
+    align-self: center
+  }
+
+  .header-text {
+    width: calc(100% - 20px);
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
   }
 
 }
@@ -99,13 +210,13 @@
 }
 
 .main__title {
-  color: #FF0070;
+  color: var(--theme-accent-color);
 }
 
 .card-title {
   color: #000028;
   width: 100%;
-  background-color: #FF0070;
+  background-color: var(--theme-accent-color);
 }
 
 .main__why-title {
@@ -118,6 +229,13 @@
 
 .why__item2 {
   grid-area: b;
+}
+
+@media (max-width:375px) {
+  .main__why {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* Секция WHY */
@@ -271,10 +389,15 @@
 /* Футер */
 
 footer {
-  text-align: center;
+  align-items: center;
+  justify-items: center;
 
 }
 
 .footer > .header-title {
   text-shadow: #FF0070 2px 2px;
+}
+
+.footer__title {
+
 }

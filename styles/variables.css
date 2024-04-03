@@ -5,4 +5,19 @@
 
 :root {
   --bg-color: #FFF1F7;
+
+  
+}
+
+:root {
+  --page-font: 'IBM Plex mono', sans-serif;
+  --main-size: 18px;
+  --main-weight: 400;
+  --accent-size: 157px;
+  --accent-weight: 700;
+  --bg-color: #000028;
+  /* --bg-image: url(../images/cover-image-dark.png) */
+  --text-color: #F1B2CE;
+  --accent-color: #DB00FF;
+  --theme-accent-color: #FF0070;
 }
