@@ -3,11 +3,7 @@
   и их переопределение под различные устройства
 */
 
-:root {
-  --bg-color: #FFF1F7;
 
-  
-}
 
 :root {
   --page-font: 'IBM Plex mono', sans-serif;
@@ -16,8 +12,9 @@
   --accent-size: 157px;
   --accent-weight: 700;
   --bg-color: #000028;
-  /* --bg-image: url(../images/cover-image-dark.png) */
+
   --text-color: #F1B2CE;
   --accent-color: #DB00FF;
   --theme-accent-color: #FF0070;
+  --border-theme-hover-color: rgb(255, 0, 112, 0.4)
 }

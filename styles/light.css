@@ -4,9 +4,68 @@
   переключая тему
 */
 
+:root .theme-light {
+  /* Переменные светлой темы */    
+  --page-font: 'IBM Plex mono', sans-serif;
+  --main-size: 18px;
+  --main-weight: 400;
+  --accent-size: 157px;
+  --accent-weight: 700;
+  /* --bg-color: #FFF1F7; */
+  --bg-color: aqua
+  --text-color: #353430;
+  --accent-color: aqua;
+  /* #FFC2E6 */
+  --theme-accent-color: #FF0070;
+  
+}
+
+
 .page.theme_light {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+
+  font-family: var(--page-font);
+  background-color: var(--bg-color);
+  font-size: var(--main-size);
+  /* background-image: url(../images/cover-image-light.png); */
+  background-image: none;
+}
+
+
+
+/* Остальные стили */
+
+/* .decorated-zone::after {
+  display:none;
+} */
+
+.header-title .theme_light {
+  color: var(--accent-color, #FFC2E6);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+      /* Дублируем переменные светлой темы */    
+      --page-font: 'IBM Plex mono', sans-serif;
+      --main-size: 18px;
+      --main-weight: 400;
+      --accent-size: 157px;
+      --accent-weight: 700;
+      --bg-color: #FFF1F7;
+      --text-color: #353430;
+      --accent-color: #FFC2E6;
+      --theme-accent-color: #FF0070;
+  }
+
+  .decorated-zone::after {
+    display:none;
+  }
+  
+  .header-title.theme_light {
+    color: var(--accent-color, #FFC2E6);
+  }
+
 }

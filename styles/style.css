@@ -1,19 +1,9 @@
 
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-:root {
-  --page-font: 'IBM Plex mono', sans-serif;
-  --main-size: 18px;
-  --main-weight: 400;
-  --accent-size: 157px;
-  --accent-weight: 700;
-  --bg-color: #000028;
-  /* --bg-image: url(../images/cover-image-dark.png) */
-  --text-color: #F1B2CE;
-  --accent-color: #DB00FF;
-  --theme-accent-color: #FF0070;
-  --border-theme-hover-color: rgb(255, 0, 112, 0.4)
-}
+
+
+
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
@@ -51,25 +41,14 @@
 
   --breakpoint: 768px;
   --breakpoint-simulation: (100vw - var(--breakpoint));
-
-  /* --height-header: ; */
-
   min-height: 768px;
   max-width: 1024px;
   height: calc(1792px - 100vw);
-  /* background-color: aqua; */
-  /* height:clamp(768px, var(--breakpoint-simulation) * 1000, 1024px); */
-
-  
 
 }
 
 @media (max-width: 768px) {
   .header {
-    /* min-height: 668px;
-    min-width: 375px; */
-    
-    /* height: calc(100vw * 1.33); */
     height: calc(100vw + 256px);
   }
 
@@ -94,6 +73,7 @@
   
 } */
 
+/* Фигита */
 .decorated-zone::marker {
   color: #2e9aff;
 }
@@ -128,7 +108,7 @@
   
 }
 
-.header__theme-menu-button:focus {
+.header__theme-menu-button:focus-visible {
   border-color: transparent transparent var(--theme-accent-color) transparent;
 }
 
