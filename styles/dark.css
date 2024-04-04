@@ -11,7 +11,8 @@
   --text-color: #F1B2CE;
   --accent-color: #DB00FF;
   --theme-accent-color: #FF0070;
-  --border-theme-hover-color: rgb(255, 0, 112, 0.4)
+  --border-theme-hover-color: rgb(255, 0, 112, 0.4);
+  --bg-image: url(../images/cover-image-dark.png);
 }
 
 .page.theme_dark {
@@ -23,7 +24,8 @@
   font-family: var(--page-font);
   background-color: var(--bg-color);
   font-size: var(--main-size);
-  background-image: url(../images/cover-image-dark.png);
+  /* background-image: url(../images/cover-image-dark.png); */
+  border-image: var(--bg-image);
 }
 
 

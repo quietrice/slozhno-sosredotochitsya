@@ -12,7 +12,9 @@
   --accent-size: 157px;
   --accent-weight: 700;
   --bg-color: #000028;
+  --header-text-color: #000028;
 
+  --bg-image: url(../images/cover-image-dark.png);
   --text-color: #F1B2CE;
   --accent-color: #DB00FF;
   --theme-accent-color: #FF0070;

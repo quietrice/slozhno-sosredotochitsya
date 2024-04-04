@@ -14,7 +14,7 @@
   font-size: var(--main-size);
   max-width: 1024px;
   margin-bottom: 60px;
-  background-image: url(../images/cover-image-dark.png);
+  background-image: var(--bg-image);
   background-attachment: fixed;
   
 }
@@ -54,16 +54,48 @@
 
 }
 
+.header::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border-color: var(--theme-accent-color) var(--theme-accent-color) transparent transparent;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.header::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  border-color: transparent transparent var(---theme-accent-color) var(--theme-accent-color);
+  border-width: 1px;
+  border-style: solid;
+}
+
 .decorated-zone::after {
   position: absolute;
   content: "REC";
   color: var(--theme-accent-color);
-  right: 27px;
-  top: 27px;
-
-  
+  right: 48px;
+  top: 20px;
 
 }
+
+/* img[hidden] {
+  display: block;
+} */
+
+/* @media (prefers-color-scheme: light) {
+  .decorated-zone {
+    display: none;
+  }
+} */
 
 /* .decorated-zone::after {
   position: absolute;
@@ -96,6 +128,7 @@
   /* border-color: var(--accent-color); */
   border-style: solid;
   color: var(--theme-accent-color);
+  cursor: pointer;
 }
 
 .header__theme-menu-item {
@@ -103,13 +136,26 @@
 }
 
 .header__theme-menu-button:hover {
-  border-color: var(--border-theme-hover-color);
+  /* border-color: var(--border-theme-hover-color); */
   border-width: 1px;
+  border-color: transparent transparent var(--theme-accent-color) transparent;
   
 }
 
 .header__theme-menu-button:focus-visible {
-  border-color: transparent transparent var(--theme-accent-color) transparent;
+  /* border-color: transparent transparent var(--theme-accent-color) transparent; */
+  border-color: aqua;
+}
+
+.header__theme-menu-button:focus {
+  /* border-color: transparent transparent var(--theme-accent-color) transparent; */
+  /* border-color: aqua; */
+}
+
+.header__theme-menu-button:active {
+  
+  border-color: var(--theme-accent-color);
+
 }
 
 .header-title {
@@ -126,6 +172,7 @@
   justify-self: end;
   background-color: var(--theme-accent-color);
   height: min-content;
+  color: var(--header-text-color);
 }
 
 @media (max-width:768px) {
@@ -369,9 +416,34 @@
 /* Футер */
 
 footer {
+  position: relative;
   align-items: center;
   justify-items: center;
 
+}
+
+.footer::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border-color: var(--text-color) var(--text-color) transparent transparent;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.footer::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  border-color: transparent transparent var(--text-color) var(--text-color);
+  border-width: 1px;
+  border-style: solid;
 }
 
 .footer > .header-title {
@@ -381,3 +453,4 @@ footer {
 .footer__title {
 
 }
+
