@@ -17,6 +17,7 @@
   --accent-color: #FFC2E6;
   /* #FFC2E6 */
   --theme-accent-color: #FF8DCB;
+  --title-h2-color: #353430;
   --bg-image: url(../images/cover-image-light.png);
   
 }
@@ -51,6 +52,10 @@
   color: var(--header-text-color);
 }
 
+.header__theme-menu-button_active .theme_light {
+  border-color: var(--header-text-color);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
       /* Дублируем переменные светлой темы */    
@@ -63,6 +68,7 @@
       --text-color: #353430;
       --accent-color: #FFC2E6;
       --theme-accent-color: #FF0070;
+      --title-h2-color: #353430;
   }
 
   .decorated-zone::after {
@@ -71,6 +77,10 @@
   
   .header-title.theme_light {
     color: var(--accent-color, #FFC2E6);
+  }
+
+  .header__theme-menu-button_active {
+    border-color: var(--text-color);
   }
 
 }

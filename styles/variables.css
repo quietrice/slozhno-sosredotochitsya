@@ -11,6 +11,7 @@
   --main-weight: 400;
   --accent-size: 157px;
   --accent-weight: 700;
+  --padding-px: 20px;
   --bg-color: #000028;
   --header-text-color: #000028;
 
@@ -18,5 +19,6 @@
   --text-color: #F1B2CE;
   --accent-color: #DB00FF;
   --theme-accent-color: #FF0070;
-  --border-theme-hover-color: rgb(255, 0, 112, 0.4)
+  --border-theme-hover-color: rgb(255, 0, 112, 0.4);
+  --title-h2-color: #FF0070;
 }
