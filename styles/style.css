@@ -81,7 +81,7 @@
   border-style: solid;
 }
 
-.header::after {
+/* .header::after {
   content: "";
   width: 25px;
   height: 25px;
@@ -99,8 +99,53 @@
   color: var(--title-h2-color);
   right: 48px;
   top: 20px;
+  line-height: 139%;
+  display: list-item;
+
+} */
+
+.ss {
+  display: flex;
+  position: absolute;
+  /* content: "REC"; */
+  color: var(--title-h2-color);
+  right: 48px;
+  top: 20px;
+  line-height: 139%;
+  align-items: center;
 
 }
+
+.dot_ss {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-color: var(--title-h2-color) var(--title-h2-color) transparent transparent;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.ss_smal {
+  width: 9px;
+  height: 9px;
+  border-radius: 100%;
+  background-color: #ff0070;
+  box-shadow: 0 0 4px 2px #ff0070;
+}
+
+/* .decorated-zone::after {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: red;
+}  */
+  
+
 
 /* Фигита */
 .decorated-zone::marker {
