@@ -15,7 +15,6 @@
   --header-text-color: #353430;
   --text-color: #353430;
   --accent-color: #FFC2E6;
-  /* #FFC2E6 */
   --theme-accent-color: #FF8DCB;
   --title-h2-color: #353430;
   --bg-image: url(../images/cover-image-light.png);
@@ -28,21 +27,13 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-
   font-family: var(--page-font);
   background-color: var(--bg-color);
   font-size: var(--main-size);
   background-image: var(--bg-image);
-  /* background-image: none; */
 }
 
-
-
 /* Остальные стили */
-/* 
-.decorated-zone::after .theme_light{
-  content: "";
-} */
 
 .header-title .theme_light {
   color: var(--accent-color);
@@ -54,6 +45,14 @@
 
 .header__theme-menu-button_active .theme_light {
   border-color: var(--header-text-color);
+}
+
+.decorated-zone::after {
+  display:none;
+}
+
+.decorate-zone_ball {
+  display: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -87,5 +86,4 @@
   .header__theme-menu-button_active {
     border-color: var(--text-color);
   }
-
 }

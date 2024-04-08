@@ -7,7 +7,6 @@
 :root.theme-dark {
   /* Дублируем переменные для тёмной темы */
   --bg-color: #000028;
-  /* --bg-image: url(../images/cover-image-dark.png) */
   --text-color: #F1B2CE;
   --accent-color: #DB00FF;
   --theme-accent-color: #FF0070;
@@ -21,12 +20,8 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-
   font-family: var(--page-font);
   background-color: var(--bg-color);
   font-size: var(--main-size);
-  /* background-image: url(../images/cover-image-dark.png); */
   border-image: var(--bg-image);
 }
-
-
