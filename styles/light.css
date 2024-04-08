@@ -69,10 +69,15 @@
       --accent-color: #FFC2E6;
       --theme-accent-color: #FF0070;
       --title-h2-color: #353430;
+      --bg-image: url(../images/cover-image-light.png);
   }
 
   .decorated-zone::after {
     display:none;
+  }
+
+  .decorate-zone_ball {
+    display: none;
   }
   
   .header-title.theme_light {
