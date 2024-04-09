@@ -13,6 +13,7 @@
   --title-h2-color: #FF0070;
   --border-theme-hover-color: rgb(255, 0, 112, 0.4);
   --bg-image: url(../images/cover-image-dark.png);
+  
 }
 
 .page.theme_dark {
@@ -26,10 +27,10 @@
   border-image: var(--bg-image);
 }
 
-.decorated-zone::after .theme_dark{
+/* .decorated-zone::after .theme_dark{
   display:block;
 }
 
 .decorate-zone_ball .theme_dark{
   display: block;
-}
+} */
