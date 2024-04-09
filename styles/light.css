@@ -47,11 +47,11 @@
   border-color: var(--header-text-color);
 }
 
-.decorated-zone::after {
+.decorated-zone::after .theme_light{
   display:none;
 }
 
-.decorate-zone_ball {
+.decorate-zone_ball .theme_light{
   display: none;
 }
 
@@ -71,19 +71,21 @@
       --bg-image: url(../images/cover-image-light.png);
   }
 
-  .decorated-zone::after {
+  .decorated-zone::after .theme_light{
     display:none;
   }
 
-  .decorate-zone_ball {
+  .decorate-zone_ball .theme_light{
     display: none;
   }
+
   
-  .header-title.theme_light {
+  
+  .header-title .theme_light {
     color: var(--accent-color, #FFC2E6);
   }
 
-  .header__theme-menu-button_active {
+  .header__theme-menu-button_active .theme_light{
     border-color: var(--text-color);
   }
 }
