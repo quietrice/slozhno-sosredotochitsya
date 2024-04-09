@@ -327,6 +327,7 @@
 /* Футер */
 
 .footer {
+  display: flex;
   position: relative;
   align-items: center;
   justify-items: center;
@@ -334,10 +335,6 @@
   max-width: 984px;
   height: calc(1792px - 100vw);
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(1792px - 100vw);
 }
 
 .footer::after {
