@@ -111,7 +111,7 @@
 
 .header__theme-menu-button:hover {
   border-width: 1px;
-  border-color: transparent transparent var(--title-h2-color) transparent;  
+  border-color: transparent transparent var(--title-h2-color) transparent;
 }
 
 .header__theme-menu-button:focus-visible {
@@ -126,7 +126,6 @@
 .header-title {
   grid-area: title;
   font-family: var(--page-font);
-  font-family: 'IBM Plex mono', sans-serif;
   font-size: clamp(7.25rem, 6.3958rem + 3.7963vw, 9.8125rem);
   color: var(--accent-color, #DB00FF);
   text-shadow: #FF0070 4px 4px;

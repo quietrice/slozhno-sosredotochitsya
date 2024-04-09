@@ -5,7 +5,7 @@
 */
 
 :root .theme_light {
-  /* Переменные светлой темы */    
+  /* Переменные светлой темы */
   --page-font: 'IBM Plex mono', sans-serif;
   --main-size: 18px;
   --main-weight: 400;
@@ -48,11 +48,11 @@
   border-color: var(--header-text-color);
 }
 
-.decorated-zone::after .theme_light{
+.decorated-zone::after .theme_light {
   display:var(--decorate-display);
 }
 
-.decorate-zone_ball .theme_light{
+.decorate-zone_ball .theme_light {
   display: var(--decorate-display);
 }
 
@@ -66,7 +66,7 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-      /* Дублируем переменные светлой темы */    
+      /* Дублируем переменные светлой темы */
       --page-font: 'IBM Plex mono', sans-serif;
       --main-size: 18px;
       --main-weight: 400;
@@ -81,21 +81,19 @@
       --decorate-display: none;
   }
 
-  .decorated-zone::after{
+  .decorated-zone::after {
     display:var(--decorate-display);
   }
 
-  .decorate-zone_ball{
+  .decorate-zone_ball {
     display: var(--decorate-display);
   }
 
-  
-  
   .header-title .theme_light {
     color: var(--accent-color, #FFC2E6);
   }
 
-  .header__theme-menu-button_active .theme_light{
+  .header__theme-menu-button_active .theme_light {
     border-color: var(--text-color);
   }
 }
