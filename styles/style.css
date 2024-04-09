@@ -20,7 +20,7 @@
   min-height: 768px;
   max-width: 1024px;
   height: calc(1792px - 100vw);
-  gap: 2.7rem;
+  gap: 3rem;
   grid-template-areas: 
   "list"
   "title"
@@ -121,7 +121,7 @@
   color: var(--accent-color, #DB00FF);
   text-shadow: #FF0070 4px 4px;
   font-weight: bold;
-  word-spacing: -0.5rem;
+  letter-spacing: -0.1rem;
   line-height: 83%;
   align-self: center;
 }
@@ -135,7 +135,7 @@
   background-color: var(--theme-accent-color);
   height: min-content;
   color: var(--header-text-color);
-  line-height: 123%;
+  line-height: 130%;
   font-weight: 700;
 }
 
@@ -144,7 +144,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 5rem;
   margin-top: 60px;
   margin-inline-start: 20px;
   margin-inline-end: 20px;
@@ -165,9 +165,7 @@
 .card-text {
   color: var(--text-color);
   font-weight: var(--main-weight);
-  line-height: 131%;
-  word-spacing: -0.2em;
-  letter-spacing: 0.5px;
+  line-height: 130%;
   text-align: left;
 }
 
@@ -207,7 +205,7 @@
   grid-area: b;
 }
 
-/* Секция WHY */
+/* Секция WHAT */
 
 .main__what {
   max-width: 1024px;
@@ -328,12 +326,17 @@
 
 /* Футер */
 
-footer {
+.footer {
   position: relative;
   align-items: center;
   justify-items: center;
-  min-height: 768px;
-  max-width: 1024px;
+  min-height: 728px;
+  max-width: 984px;
+  height: calc(1792px - 100vw);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: calc(1792px - 100vw);
 }
 
@@ -342,8 +345,8 @@ footer {
   width: 25px;
   height: 25px;
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: 0;
+  top: 0;
   border-color: var(--title-h2-color) var(--title-h2-color) transparent transparent;
   border-width: 1px;
   border-style: solid;
@@ -355,7 +358,7 @@ footer {
   height: 25px;
   position: absolute;
   left: 0;
-  bottom: 0px;
+  bottom: 0;
   border-color: transparent transparent var(--title-h2-color) var(--title-h2-color);
   border-width: 1px;
   border-style: solid;
@@ -424,6 +427,10 @@ footer {
     width: calc(100% - 20px);
     margin-inline-start: 10px;
     margin-inline-end: 10px;
+  }
+
+  .footer {
+    padding: 0;
   }
 }
 
