@@ -19,6 +19,7 @@
   display: grid;
   min-height: 768px;
   max-width: 1024px;
+  /* height: calc(1792px - 100vw); строка*/
   height: calc(1792px - 100vw);
   gap: 3rem;
   grid-template-areas: 
@@ -26,8 +27,7 @@
   "title"
   "text"  ;
 }
-
-.header::before {
+.header::before, .footer::before {
   content: "";
   width: 25px;
   height: 25px;
@@ -52,7 +52,7 @@
 
 /* ВАЖНО! */
 
-.decorate-zone_ramka {
+/* .decorate-zone_ramka {
   display: flex;
   position: absolute;
   align-items: center;
@@ -64,6 +64,22 @@
   border-style: solid;
   right: 20px;
   top: 20px;
+} */
+
+.header::after, .footer::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-color: var(--title-h2-color) var(--title-h2-color) transparent transparent;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.decorate-zone_ramka {
+  position: absolute;
 }
 
 .decorate-zone_ball {
@@ -174,13 +190,20 @@
   text-decoration: none;
 }
 
-.main__why {
+.main__global {
   display: grid;
+  row-gap: 20px;
+  width: 100%;
+  /* max-width: 1024px; */
+}
+
+.main__why {
+  /* display: grid; */
   grid-template-columns: 1fr 2fr;
   grid-template-areas: 
     "t a a"
     "t b b";
-  gap: 20px
+  column-gap: 20px;
 }
 
 .main__title {
@@ -208,13 +231,13 @@
 /* Секция WHAT */
 
 .main__what {
-  max-width: 1024px;
-  display: grid;
+  
+  
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 
     "t - -"
     "a b c";
-  gap: 20px
+  column-gap: 20px;
 }
 
 .main__what-title {
@@ -236,8 +259,7 @@
 /* Сектор HOW */
 
 .main__how {
-  width: 100%;
-  display: grid;
+
   grid-template-columns: 1fr 2fr;
   grid-template-areas: 
     "t a"
@@ -247,7 +269,6 @@
     "t e"
     "t f"
     ;
-  row-gap: 20px;
   column-gap: 10px;
 }
 
@@ -329,15 +350,14 @@
 .footer {
   display: flex;
   position: relative;
-  align-items: center;
-  justify-items: center;
   min-height: 728px;
   max-width: 984px;
-  height: calc(1792px - 100vw);
+  height: calc(1792px - 100vh);
   width: 100vw;
+  justify-content: center;
 }
 
-.footer::after {
+/* .footer::after {
   content: "";
   width: 25px;
   height: 25px;
@@ -347,9 +367,9 @@
   border-color: var(--title-h2-color) var(--title-h2-color) transparent transparent;
   border-width: 1px;
   border-style: solid;
-}
+} */
 
-.footer::before {
+/* .footer::before {
   content: "";
   width: 25px;
   height: 25px;
@@ -359,7 +379,7 @@
   border-color: transparent transparent var(--title-h2-color) var(--title-h2-color);
   border-width: 1px;
   border-style: solid;
-}
+} */
 
 .footer > .header-title {
   text-shadow: #FF0070 2px 2px;
@@ -373,11 +393,10 @@
   }
   
   .header, .footer {
-    height: calc(100vw + 256px);
+    height: max(calc(100vw + 256px), 668px);
   }
 
   .header__theme-menu-list {
-    display: flex;
     flex-direction: column;
     align-items: end;
   }
