@@ -47,13 +47,13 @@
   border-color: var(--header-text-color);
 }
 
-.decorated-zone::after .theme_light {
+/* .decorated-zone::after .theme_light {
   display:var(--decorate-display);
 }
 
 .decorate-zone_ball .theme_light {
   display: var(--decorate-display);
-}
+} */
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -72,13 +72,13 @@
       --decorate-display: none;
   }
 
-  .decorated-zone::after {
+  /* .decorated-zone::after {
     display:var(--decorate-display);
   }
 
   .decorate-zone_ball {
     display: var(--decorate-display);
-  }
+  } */
 
   .header-title .theme_light {
     color: var(--accent-color, #FFC2E6);

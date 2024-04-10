@@ -39,15 +39,41 @@
   border-style: solid;
 }
 
-.decorated-zone::after {
-  display: var(--decorate-display);
-  position: absolute;
-  content: "REC";
-  color: var(--title-h2-color);
+/* .decorated-zone::after { */
+  /* display: var(--decorate-display); */
+  /* position: absolute; */
+  /* content: "REC"; */
+  /* ; */
+  /* font-size: 18px;
+  width: 10px;
+  height: 10px;
+  color: #FF0070;
   right: 48px;
   top: 20px;
   line-height: 139%;
   font-size: 18px;
+} */
+
+.decorate-zone_rec::before {
+  position: absolute;
+  right: 48px;
+  top: 20px;
+  content: "rec";
+  text-transform: uppercase;
+  color: #FF0070;
+  display: var(--decorate-display);
+}
+
+.decorate-zone_rec::after {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  /* display: var(--decorate-display); */
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #ff0070;
+  box-shadow: 0 0 4px 2px #ff0070;
 }
 
 /* ВАЖНО! */
@@ -78,18 +104,18 @@
   border-style: solid;
 }
 
-.decorate-zone_ramka {
+/* .decorate-zone_ramka {
   position: absolute;
-}
+} */
 
-.decorate-zone_ball {
+/* .decorate-zone_ball {
   display: var(--decorate-display);
   width: 9px;
   height: 9px;
   border-radius: 100%;
   background-color: #ff0070;
   box-shadow: 0 0 4px 2px #ff0070;
-}
+} */
 
 /* Кнопки */
 
