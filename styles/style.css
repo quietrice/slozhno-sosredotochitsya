@@ -3,6 +3,9 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
   font-family: var(--page-font);
   background-color: var(--bg-color);
   font-size: var(--main-size);
@@ -10,6 +13,7 @@
   margin-bottom: 60px;
   background-image: var(--bg-image);
   background-attachment: fixed;
+  background-size: cover;
 }
 
 /* Хедер */
@@ -19,40 +23,33 @@
   display: grid;
   min-height: 768px;
   max-width: 1024px;
-  /* height: calc(1792px - 100vw); строка*/
   height: calc(1792px - 100vw);
   gap: 3rem;
+  grid-template-rows: auto auto auto;
   grid-template-areas: 
   "list"
   "title"
   "text"  ;
 }
-.header::before, .footer::before {
+.decorated-zone::before {
   content: "";
   width: 25px;
   height: 25px;
   position: absolute;
   left: 20px;
   bottom: 20px;
-  border-color: transparent transparent  var(--title-h2-color) var(--title-h2-color);
+  border-color: transparent transparent  var(--title-subtitle-color) var(--title-subtitle-color);
   border-width: 1px;
   border-style: solid;
 }
 
-/* .decorated-zone::after { */
-  /* display: var(--decorate-display); */
-  /* position: absolute; */
-  /* content: "REC"; */
-  /* ; */
-  /* font-size: 18px;
-  width: 10px;
-  height: 10px;
-  color: #FF0070;
-  right: 48px;
-  top: 20px;
-  line-height: 139%;
-  font-size: 18px;
-} */
+.decorate-zone_rec {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+}
 
 .decorate-zone_rec::before {
   position: absolute;
@@ -63,13 +60,13 @@
   color: #FF0070;
   display: var(--decorate-display);
 }
-
+/* КРУЖОК */
 .decorate-zone_rec::after {
   content: "";
   position: absolute;
   right: 29px;
   top: 28px;
-  /* display: var(--decorate-display); */
+  display: var(--decorate-display);
   width: 9px;
   height: 9px;
   border-radius: 50%;
@@ -79,44 +76,17 @@
 
 /* ВАЖНО! */
 
-/* .decorate-zone_ramka {
-  display: flex;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  width: 25px;
-  height: 25px;
-  border-color: var(--title-h2-color) var(--title-h2-color) transparent transparent;
-  border-width: 1px;
-  border-style: solid;
-  right: 20px;
-  top: 20px;
-} */
-
-.header::after, .footer::after {
+.decorated-zone::after {
   content: "";
   width: 25px;
   height: 25px;
   position: absolute;
   right: 20px;
   top: 20px;
-  border-color: var(--title-h2-color) var(--title-h2-color) transparent transparent;
+  border-color: var(--title-subtitle-color) var(--title-subtitle-color) transparent transparent;
   border-width: 1px;
   border-style: solid;
 }
-
-/* .decorate-zone_ramka {
-  position: absolute;
-} */
-
-/* .decorate-zone_ball {
-  display: var(--decorate-display);
-  width: 9px;
-  height: 9px;
-  border-radius: 100%;
-  background-color: #ff0070;
-  box-shadow: 0 0 4px 2px #ff0070;
-} */
 
 /* Кнопки */
 
@@ -138,22 +108,26 @@
   border-width: 1px;
   border-color: transparent;
   border-style: solid;
-  color: var(--title-h2-color);
+  color: var(--title-subtitle-color);
   cursor: pointer;
   line-height: 100%;
 }
 
 .header__theme-menu-button:hover {
   border-width: 1px;
-  border-color: transparent transparent var(--title-h2-color) transparent;
+  border-color: transparent transparent var(--title-subtitle-color) transparent;
 }
 
 .header__theme-menu-button:focus-visible {
-  border-color: transparent transparent var(--theme-accent-color) transparent;
+  border-color: transparent transparent var(--title-subtitle-color) transparent;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
 }
 
 .header__theme-menu-button_active {
-  border-color: var(--title-h2-color);
+  border-color: var(--title-subtitle-color);
   pointer-events: none;
 }
 
@@ -188,7 +162,6 @@
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  margin-top: 60px;
   margin-inline-start: 20px;
   margin-inline-end: 20px;
 }
@@ -221,11 +194,9 @@
   display: grid;
   row-gap: 20px;
   width: 100%;
-  /* max-width: 1024px; */
 }
 
 .main__why {
-  /* display: grid; */
   grid-template-columns: 1fr 2fr;
   grid-template-areas: 
     "t a a"
@@ -234,7 +205,7 @@
 }
 
 .main__title {
-  color: var(--title-h2-color);
+  color: var(--title-subtitle-color);
 }
 
 .card-title {
@@ -247,19 +218,17 @@
   grid-area: t;
 }
 
-.why__item1 {
+.why__item-multitasking {
   grid-area: a;
 }
 
-.why__item2 {
+.why__item-dopamine {
   grid-area: b;
 }
 
 /* Секция WHAT */
 
 .main__what {
-  
-  
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 
     "t - -"
@@ -271,15 +240,15 @@
   grid-area: t;
 }
 
-.what__item1 {
+.what__item-multitasking {
   grid-area: a;
 }
 
-.what__item2 {
+.what__item-food {
   grid-area: b;
 }
 
-.what__item3 {
+.what__item-gadgets {
   grid-area: c;
 }
 
@@ -303,27 +272,27 @@
   grid-area: t;
 }
 
-.how__item1 {
+.how__item-5simple {
   grid-area: a;
 }
 
-.how__item2 {
+.how__item-sky-and-clouds {
   grid-area: b;
 }
 
-.how__item3 {
+.how__item-music {
   grid-area: c;
 }
 
-.how__item4 {
+.how__item-walk {
   grid-area: d;
 }
 
-.how__item5 {
+.how__item-eat {
   grid-area: e;
 }
 
-.how__item6 {
+.how__item-read {
   grid-area: f;
 }
 
@@ -333,6 +302,7 @@
 }
 
 /* Галерея */
+
 .gallery {
   display: grid;
   width: 100%;
@@ -377,41 +347,15 @@
 .footer {
   display: flex;
   position: relative;
-  min-height: 728px;
-  max-width: 984px;
-  height: calc(1792px - 100vh);
-  width: 100vw;
+  min-height: 768px;
+  height: calc(1792px - 100vw);
+  width: 100%;
   justify-content: center;
 }
-
-/* .footer::after {
-  content: "";
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  border-color: var(--title-h2-color) var(--title-h2-color) transparent transparent;
-  border-width: 1px;
-  border-style: solid;
-} */
-
-/* .footer::before {
-  content: "";
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  border-color: transparent transparent var(--title-h2-color) var(--title-h2-color);
-  border-width: 1px;
-  border-style: solid;
-} */
 
 .footer > .header-title {
   text-shadow: #FF0070 2px 2px;
 }
-
 
 @media (max-width: 768px) {
   .page {
