@@ -65,9 +65,10 @@
 }
 
 .decorate-zone_rec::after {
+  content: "";
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 29px;
+  top: 28px;
   /* display: var(--decorate-display); */
   width: 9px;
   height: 9px;
@@ -97,8 +98,8 @@
   width: 25px;
   height: 25px;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 20px;
+  top: 20px;
   border-color: var(--title-h2-color) var(--title-h2-color) transparent transparent;
   border-width: 1px;
   border-style: solid;
