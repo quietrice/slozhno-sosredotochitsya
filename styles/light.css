@@ -19,6 +19,7 @@
   --title-subtitle-color: #353430;
   --bg-image: url(../images/cover-image-light.png);
   --decorate-display: none;
+  --border-theme-hover-color: rgba(50, 49, 45, 0.4);
 }
 
 
@@ -46,5 +47,6 @@
       --title-subtitle-color: #353430;
       --bg-image: url(../images/cover-image-light.png);
       --decorate-display: none;
+      --border-theme-hover-color: rgba(50, 49, 45, 0.4);
   }
 }

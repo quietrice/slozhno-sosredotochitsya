@@ -115,7 +115,7 @@
 
 .header__theme-menu-button:hover {
   border-width: 1px;
-  border-color: transparent transparent var(--title-subtitle-color) transparent;
+  border-color: var(--border-theme-hover-color) var(--border-theme-hover-color) var(--border-theme-hover-color) var(--border-theme-hover-color);
 }
 
 .header__theme-menu-button:focus-visible {
@@ -178,16 +178,31 @@
   flex-direction: column;
 }
 
+.link {
+  text-shadow: #FF0070 2px 2px;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+.link:hover {
+  border-color: transparent transparent var(--text-color) transparent;
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  border-color: var(--text-color) var(--text-color) var(--text-color) var(--text-color);
+}
+
 .card-text {
   color: var(--text-color);
   font-weight: var(--main-weight);
   line-height: 130%;
   text-align: left;
-}
-
-.card-text > a {
-  text-shadow: #FF0070 2px 2px;
-  text-decoration: none;
 }
 
 .main__global {
@@ -255,7 +270,6 @@
 /* Сектор HOW */
 
 .main__how {
-
   grid-template-columns: 1fr 2fr;
   grid-template-areas: 
     "t a"
