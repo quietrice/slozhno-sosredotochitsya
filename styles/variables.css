@@ -4,19 +4,19 @@
 */
 
 :root {
-  --page-font: 'IBM Plex mono', sans-serif;
-  --main-size: 18px;
-  --main-weight: 400;
+  --accent-color: #DB00FF;
   --accent-size: 157px;
   --accent-weight: 700;
-  --padding-px: 20px;
   --bg-color: #000028;
-  --header-text-color: #000028;
-  --bg-image: url(../images/cover-image-dark.png);
-  --text-color: #F1B2CE;
-  --accent-color: #DB00FF;
-  --theme-accent-color: #FF0070;
   --border-theme-hover-color: rgb(255, 0, 112, 0.4);
-  --title-subtitle-color: #FF0070;
+  --bg-image: url(../images/cover-image-dark.png);
   --decorate-display: block;
+  --header-text-color: #000028;
+  --main-size: 18px;
+  --main-weight: 400;
+  --page-font: 'IBM Plex mono', sans-serif;
+  --padding-px: 20px;
+  --text-color: #F1B2CE;
+  --theme-accent-color: #FF0070;
+  --title-subtitle-color: #FF0070;
 }

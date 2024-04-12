@@ -1,6 +1,8 @@
 
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+* { outline: 1px solid aqua; }
+
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   display: flex;
@@ -43,6 +45,18 @@
   border-style: solid;
 }
 
+.decorated-zone::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border-color: var(--title-subtitle-color) var(--title-subtitle-color) transparent transparent;
+  border-width: 1px;
+  border-style: solid;
+}
+
 .decorate-zone_rec {
   position: absolute;
   right: 0;
@@ -72,20 +86,6 @@
   border-radius: 50%;
   background-color: #ff0070;
   box-shadow: 0 0 4px 2px #ff0070;
-}
-
-/* ВАЖНО! */
-
-.decorated-zone::after {
-  content: "";
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  border-color: var(--title-subtitle-color) var(--title-subtitle-color) transparent transparent;
-  border-width: 1px;
-  border-style: solid;
 }
 
 /* Кнопки */
@@ -134,7 +134,7 @@
 .header-title {
   grid-area: title;
   font-family: var(--page-font);
-  font-size: clamp(10rem, 6.3958rem + 3.7963vw, 9.8125rem);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   color: var(--accent-color, #DB00FF);
   text-shadow: #FF0070 4px 4px;
   font-weight: bold;
@@ -224,7 +224,7 @@
 }
 
 .card-title {
-  color: #000028;
+  color: var(--header-text-color);
   width: 100%;
   background-color: var(--theme-accent-color);
 }
@@ -244,10 +244,15 @@
 /* Секция WHAT */
 
 .main__what {
+  /* display: grid; */
+  
+  /* grid-template-columns: 1fr 1fr 1fr; */
   grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr 1fr */
+  grid-template-rows: repeat(auto-fit, auto);
   grid-template-areas: 
-    "t - -"
-    "a b c";
+    "t t t";
+    /* "a b c"; */
   column-gap: 20px;
 }
 
@@ -255,7 +260,11 @@
   grid-area: t;
 }
 
-.what__item-multitasking {
+.main__what-title > h2 {
+  width: 33%;
+}
+
+/* .what__item-multitasking {
   grid-area: a;
 }
 
@@ -265,7 +274,7 @@
 
 .what__item-gadgets {
   grid-area: c;
-}
+} */
 
 /* Сектор HOW */
 
@@ -381,18 +390,28 @@
     height: max(calc(100vw + 256px), 668px);
   }
 
+  .header {
+    grid-template-rows: auto min-content auto;
+    
+  }
+
   .header__theme-menu-list {
     flex-direction: column;
     align-items: end;
+    padding: 10px;
+  }
+
+  .header-title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 
   .main__what {
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: 
-    "t "
-    "a"
-    "b"
-    "c";
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main__what-title > h2 {
+    width: 33%;
   }
 
   .what__item {
@@ -404,17 +423,53 @@
   }
 }
 
-@media (max-width:375px) {
+@media (max-width: 440px) {
+  .main {
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+  }
+
+  .main__how {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width:380px) {
+  
+
+  .decorated-zone::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    border-color: transparent transparent  var(--title-subtitle-color) var(--title-subtitle-color);
+    border-width: 1px;
+    border-style: solid;
+  }
+  
+  .decorated-zone::after {
+    content: "";
+    right: clamp(10px, calc(100vw - 355px), 20px);
+    top: clamp(10px, calc(100vw - 355px), 20px);
+    
+  }
+
+
+  .main__global {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 100%;
+  }
+
   .main__why {
     display: flex;
     flex-direction: column;
   }
   
-  .main__how {
-    display: flex;
-    flex-direction: column;
-  }
-
   .gallery {
     display: flex;
     flex-direction: column;
