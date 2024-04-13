@@ -1,8 +1,6 @@
 
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-* { outline: 1px solid aqua; }
-
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   display: flex;
@@ -74,7 +72,9 @@
   color: #FF0070;
   display: var(--decorate-display);
 }
+
 /* КРУЖОК */
+
 .decorate-zone_rec::after {
   content: "";
   position: absolute;
@@ -244,15 +244,10 @@
 /* Секция WHAT */
 
 .main__what {
-  /* display: grid; */
-  
-  /* grid-template-columns: 1fr 1fr 1fr; */
   grid-template-columns: 1fr 1fr 1fr;
-  /* grid-template-rows: 1fr 1fr 1fr */
   grid-template-rows: repeat(auto-fit, auto);
   grid-template-areas: 
     "t t t";
-    /* "a b c"; */
   column-gap: 20px;
 }
 
@@ -263,18 +258,6 @@
 .main__what-title > h2 {
   width: 33%;
 }
-
-/* .what__item-multitasking {
-  grid-area: a;
-}
-
-.what__item-food {
-  grid-area: b;
-}
-
-.what__item-gadgets {
-  grid-area: c;
-} */
 
 /* Сектор HOW */
 
