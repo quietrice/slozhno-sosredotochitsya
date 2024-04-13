@@ -21,9 +21,9 @@
 .header {
   position: relative;
   display: grid;
-  min-height: 768px;
+  min-height: 760px;
   max-width: 1024px;
-  height: calc(1792px - 100vw);
+  height: calc(1782px - 100vw);
   gap: 3rem;
   grid-template-rows: auto auto auto;
   grid-template-areas: 
@@ -134,11 +134,13 @@
 .header-title {
   grid-area: title;
   font-family: var(--page-font);
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: clamp(7.25rem, 9.0115rem + 1.0178vw, 10.5rem);
+  /* font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, .5rem); */
+  word-spacing: 0.05em;
   color: var(--accent-color, #DB00FF);
   text-shadow: #FF0070 4px 4px;
   font-weight: bold;
-  letter-spacing: -0.1rem;
+  letter-spacing: 0rem;
   line-height: 83%;
   align-self: center;
 }
