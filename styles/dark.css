@@ -13,6 +13,7 @@
   --title-subtitle-color: #FF0070;
   --border-theme-hover-color: rgb(255, 0, 112, 0.4);
   --bg-image: url(../images/cover-image-dark.png);
+  --decorate-display: block;
 }
 
 .page .theme_dark {
