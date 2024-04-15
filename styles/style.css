@@ -21,9 +21,10 @@
 .header {
   position: relative;
   display: grid;
-  min-height: 760px;
+  min-height: 768px;
   max-width: 1024px;
-  height: calc(1782px - 100vw);
+  height: calc(100vh - 42px);
+  /* height: 100vh; */
   gap: 3rem;
   grid-template-rows: auto auto auto;
   grid-template-areas: 
@@ -163,8 +164,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  /* gap: 5rem; */
-  
+  gap: 5rem;
   margin-inline-start: 20px;
   margin-inline-end: 20px;
 }
@@ -215,10 +215,10 @@
 }
 
 .main__why {
-  grid-template-columns: 1fr 2fr;
-  grid-template-areas: 
-    "t a a"
-    "t b b";
+  grid-template-columns: 1fr auto-fill;
+  /* grid-template-areas: 
+    "t - -"
+    "t - -"; */
   column-gap: 20px;
 }
 
@@ -233,6 +233,18 @@
 }
 
 .main__why-title {
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+}
+
+.main__why-card {
+  grid-column-start: 2;
+  grid-column-end: 4;
+
+}
+
+/* .main__why-title {
   grid-area: t;
 }
 
@@ -242,7 +254,7 @@
 
 .why__item-dopamine {
   grid-area: b;
-}
+} */
 
 /* Секция WHAT */
 
@@ -272,8 +284,7 @@
     "t c"
     "t d"
     "t e"
-    "t f"
-    ;
+    "t f";
   column-gap: 20px;
 }
 
@@ -368,7 +379,6 @@
 
 @media (max-width: 768px) {
   .page {
-    /* padding: 0 10px; */
     min-width: 370px;
   }
   
@@ -401,7 +411,6 @@
   .header-title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     align-self: center;
-
   }
 
   .main {
@@ -424,10 +433,6 @@
   .what__item {
     grid-column: 1/4;
   }
-
-  /* .header__theme-menu {
-    align-self: center;
-  } */
 }
 
 @media (max-width: 440px) {
@@ -443,7 +448,6 @@
 }
 
 @media (max-width:380px) {
-  
   .page {
     gap: 40px;
   }
@@ -464,7 +468,6 @@
     content: "";
     right: 10px;
     top: 10px;
-    
   }
 
   .decorate-zone_rec::after {
@@ -478,7 +481,6 @@
   }
 
   .header {
-    /* height: 668px; */
     min-height: 668px;
     padding-left: 10px;
     gap: 10px;
@@ -486,8 +488,6 @@
 
   .header__theme-menu-list {
     padding-left: 0;
-    /* padding-top: 9px; */
-    /* padding-bottom: 37px; */
     padding-right: 10px;
   }
 
@@ -497,8 +497,6 @@
 
   .header-text {
     width: calc(100% - 20px);
-    /* margin-inline-start: 10px;
-    margin-inline-end: 10px; */
   }
 
   .main {
@@ -526,7 +524,6 @@
     flex-direction: column;
     gap: 10px;
   }
-
 
   .footer {
     padding: 0;
