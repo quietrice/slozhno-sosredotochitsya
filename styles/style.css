@@ -21,9 +21,9 @@
 .header {
   position: relative;
   display: grid;
-  min-height: 760px;
+  min-height: 768px;
   max-width: 1024px;
-  height: calc(1782px - 100vw);
+  height: 100vh;
   gap: 3rem;
   grid-template-rows: auto auto auto;
   grid-template-areas: 
@@ -90,15 +90,15 @@
 
 /* Кнопки */
 
-.header__theme-menu {
-  grid-area: list;
-}
-
 .header__theme-menu-list {
   justify-content: center;
   display: flex;
   gap: 10px;
   padding: 20px;
+}
+
+.header__theme-menu {
+  grid-area: list;
 }
 
 .header__theme-menu-button {
@@ -135,7 +135,6 @@
   grid-area: title;
   font-family: var(--page-font);
   font-size: clamp(7.25rem, 9.0115rem + 1.0178vw, 10.5rem);
-  /* font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, .5rem); */
   word-spacing: 0.05em;
   color: var(--accent-color, #DB00FF);
   text-shadow: #FF0070 4px 4px;
@@ -163,8 +162,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  /* gap: 5rem; */
-  
+  gap: 5rem;
   margin-inline-start: 20px;
   margin-inline-end: 20px;
 }
@@ -215,10 +213,7 @@
 }
 
 .main__why {
-  grid-template-columns: 1fr 2fr;
-  grid-template-areas: 
-    "t a a"
-    "t b b";
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: 20px;
 }
 
@@ -233,15 +228,13 @@
 }
 
 .main__why-title {
-  grid-area: t;
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 
-.why__item-multitasking {
-  grid-area: a;
-}
-
-.why__item-dopamine {
-  grid-area: b;
+.main__why-card {
+  grid-column-start: 2;
+  grid-column-end: 4;
 }
 
 /* Секция WHAT */
@@ -266,43 +259,16 @@
 
 .main__how {
   grid-template-columns: 1fr 2fr;
-  grid-template-areas: 
-    "t a"
-    "t b"
-    "t c"
-    "t d"
-    "t e"
-    "t f"
-    ;
   column-gap: 20px;
 }
 
 .main__how-title {
-  grid-area: t;
+  grid-column: 1/2;
+  grid-row: 1/3;
 }
 
-.how__item-5simple {
-  grid-area: a;
-}
-
-.how__item-sky-and-clouds {
-  grid-area: b;
-}
-
-.how__item-music {
-  grid-area: c;
-}
-
-.how__item-walk {
-  grid-area: d;
-}
-
-.how__item-eat {
-  grid-area: e;
-}
-
-.how__item-read {
-  grid-area: f;
+.main__how-card {
+  grid-column: 2/4;
 }
 
 .main__how-card .card-title:not(:last-child) {
@@ -357,7 +323,7 @@
   display: flex;
   position: relative;
   min-height: 768px;
-  height: calc(1792px - 100vw);
+  height: 100vh;
   width: 100%;
   justify-content: center;
 }
@@ -368,12 +334,7 @@
 
 @media (max-width: 768px) {
   .page {
-    /* padding: 0 10px; */
     min-width: 370px;
-  }
-  
-  .header, .footer {
-    height: max(calc(100vw + 256px), 668px);
   }
 
   .header {
@@ -394,18 +355,21 @@
     align-self: center;
   }
 
+  .header-title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    align-self: center;
+  }
+
   .header-text {
     margin-bottom: 22px;
   }
 
-  .header-title {
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    align-self: center;
-
+  .main {
+    gap: 80px;
   }
 
-  .main {
-    gap: 81px;
+  .main__why {
+    column-gap: 40px;
   }
 
   .main__what {
@@ -417,17 +381,19 @@
     width: 30%;
   }
 
-  .main__why {
-    column-gap: 40px;
-  }
-
   .what__item {
     grid-column: 1/4;
   }
 
-  /* .header__theme-menu {
-    align-self: center;
-  } */
+  .main__how-card {
+    padding-left: 5px;
+  }
+
+  .main__how > h3 {
+    margin-left: 5px;
+    padding-left: 0;
+    width: calc(100% - 10px);
+  }
 }
 
 @media (max-width: 440px) {
@@ -440,31 +406,30 @@
     display: flex;
     flex-direction: column;
   }
+
+  .main__how-card {
+    padding-left: 0;
+  }
+
+  .main__how > h3 {
+    margin-left: 0;
+    width: 100%;
+  }
 }
 
 @media (max-width:380px) {
-  
   .page {
     gap: 40px;
   }
 
   .decorated-zone::before {
-    content: "";
-    width: 25px;
-    height: 25px;
-    position: absolute;
     left: 10px;
     bottom: 10px;
-    border-color: transparent transparent  var(--title-subtitle-color) var(--title-subtitle-color);
-    border-width: 1px;
-    border-style: solid;
   }
   
   .decorated-zone::after {
-    content: "";
     right: 10px;
     top: 10px;
-    
   }
 
   .decorate-zone_rec::after {
@@ -478,7 +443,6 @@
   }
 
   .header {
-    /* height: 668px; */
     min-height: 668px;
     padding-left: 10px;
     gap: 10px;
@@ -486,8 +450,6 @@
 
   .header__theme-menu-list {
     padding-left: 0;
-    /* padding-top: 9px; */
-    /* padding-bottom: 37px; */
     padding-right: 10px;
   }
 
@@ -497,8 +459,6 @@
 
   .header-text {
     width: calc(100% - 20px);
-    /* margin-inline-start: 10px;
-    margin-inline-end: 10px; */
   }
 
   .main {
@@ -527,10 +487,8 @@
     gap: 10px;
   }
 
-
   .footer {
     padding: 0;
     min-height: 668px;
   }
 }
-
