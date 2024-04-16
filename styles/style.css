@@ -23,7 +23,6 @@
   display: grid;
   min-height: 768px;
   max-width: 1024px;
-  /* height: calc(100vh - 42px); */
   height: 100vh;
   gap: 3rem;
   grid-template-rows: auto auto auto;
@@ -231,7 +230,6 @@
 .main__why-title {
   grid-column-start: 1;
   grid-column-end: 2;
-
 }
 
 .main__why-card {
